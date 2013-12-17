@@ -88,7 +88,10 @@ function! s:centerize_padding(max_width, body_width)
 endfunction
 
 function! s:block_width(lines)
-  return max(map(copy(a:lines), 'strwidth(v:val)'))
+" for vim 7.3 or upper version
+"  return max(map(copy(a:lines), 'strwidth(v:val)'))
+" for vim 7.2 or lower version
+  return max(map(copy(a:lines), 'len(v:val)'))
 endfunction
 
 
